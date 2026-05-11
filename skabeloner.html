@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>TECs DesignPortal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js" defer></script>
+</head>
+
+        <!-- ØVERSTE BANNER (fuld bredde grafik) -->
+        <div class="top-banner">
+            <img src="component.png" alt="Header grafik">
+        </div>
+
+        <!-- NEDERSTE NAVBAR (sort bar) -->
+        <div class="navbar">
+            <div class="logo">
+                <a href="landingpage.html">
+                    <img src="compenttec.png" alt="tec logo">
+                </a>
+            </div>
+
+            <!-- DROPDOWN MENU (sort bar) -->
+            <nav>
+                <ul>
+                    <li class="dropdown" id="mainDropdown">
+                        <a href="#" id="dropdownToggle">☰ </a>
+                        <ul class="dropdown-content">
+
+                            <!-- GRAFIK ØVERST -->
+                            <div class="dropdown-graphic">
+                                <img src="component.png" alt="">
+                            </div>
+
+                            <!-- LUKKE-KRYDS -->
+                            <button class="dropdown-close" id="dropdownClose">×</button>
+
+                            <li><a href="landingpage.html">Forside</a> </li>
+                            <li><a href="skabeloner.html">Skabeloner</a></li>
+                            <li><a href="visuelle.html">Visuelle elementer</a></li>
+                            <li><a href="guides.html">Guides</a></li>
+                            <li><a href="kontakt.html"> Kontakt og Support</a> </li>
+                            <!-- TILFØJ DET HER -->
+                            <div class="menu-footer">
+                                <a href="https://www.figma.com/proto/WOdX4XsCEalcbG7XDRndKT/TEC-Design-Guide?page-id=128%3A1800&node-id=128-1863&p=f&viewport=470%2C277%2C0.03&t=nPK8KiLYBfAENCJe-1&scaling=scale-down&content-scaling=fixed">TECs Designguide</a>
+                                <a href="#">TECs Intranet</a>
+                            </div>
+                        </ul>
+                </ul>
+                </li> <!-- Usikker på om den ændre på noget hvis slettes... -->
+                </ul> <!-- Usikker på om den ændre på noget hvis slettes... -->
+            </nav>
+        </div>
+
+<body>
+
+<main class="content">
+
+    <!-- Intro -->
+    <section class="intro">
+        <h1>SKABELONER</h1>
+        <p>Find og download dine skabeloner til brug i undervisningen, præsentationer, mails osv.</p>
+
+        <h2>“Hvad kan du finde?”</h2>
+        <p class="steps">
+            1. Powerpoint skabelon<br>
+            2. Word skabelon<br>
+            3. Nyhedsbrev skabelon <br>
+            4. Mail-signatur
+        </p>
+    </section>
+</main>
+
+<!-- GRAFIK MED KNAPPER OVENPÅ -->
+<section class="skabelon-hero"> <!-- supergrafikken som baggrund bag knapperne -->
+    <div class="banner">
+        <img src="component.png" alt="grafik">
+    </div>
+
+    <!-- Knapperne med links til dropbox -->
+    <div class="ovals-overlay">
+        <a href="https://www.dropbox.com/scl/fi/pkgx9v76nta34ke4ot17p/TEC-Skabelon_PPT-Pr-sentation.pptx?rlkey=96qtg5okq4tk3h0mxr9j06j5i&st=m0vaq2do&dl=0"
+           class="oval powerpoint">Powerpoint</a>
+
+        <a href="https://www.dropbox.com/scl/fi/pv8e1qjxvxamjxvsk3nef/TEC-Skabelon.docx?rlkey=gbl0fddpc04tbku16javnyarn&st=fra9sd6w&dl=0"
+           class="oval logofil">Word</a>
+
+        <a href="https://www.dropbox.com/scl/fo/q73bw3fuwnwwk7n4udhw5/AMwUELiWQWs03O1n6RzCkKw?rlkey=c3nxepxltn868hqhg5x0tihqd&st=hwlz9rio&dl=0"
+           class="oval mail">Mail-signatur</a>
+
+        <a href="https://www.dropbox.com/scl/fi/pr0q5b0mb1kf2nojtnpcv/Nyhedsbrev.skabelon_v3.dotx?rlkey=a04z06aus67h9xdp6j7gs4fmp&st=axvst9dc&dl=0"
+           class="oval grafik">Nyhedsbreve</a>
+    </div>
+</section>
+
+<!-- Kolonner med billede og tekst -->
+<section class="skabelon-grid">
+
+    <!-- RÆKKE 1: Billede venstre, tekst højre -->
+    <div class="skabelon-billede">
+        <img src="powerpoint.png" alt="Powerpoint skabelon">
+    </div>
+    <div class="skabelon-tekst">
+        <h3>Powerpoint skabelon</h3>
+        <p>Her er skabelonen for din powerpoint skabelon.</p>
+        <p>Du kan se hvordan du sætter det op og bruger den korrekt i forhold til TECs visuelle identitet her.</p>
+    </div>
+
+    <!-- RÆKKE 2: Tekst venstre, billede højre -->
+    <div class="skabelon-tekst">
+        <h3>Word skabelon</h3>
+        <p>Her er skabelonen for din Word skabelon.</p>
+        <p>Du kan se hvordan du sætter det op og bruger den korrekt i forhold til TECs visuelle identitet her.</p>
+    </div>
+    <div class="skabelon-billede">
+        <img src="word.png" alt="Word skabelon">
+    </div>
+
+
+    <!-- RÆKKE 3: Billede venstre, tekst højre -->
+    <div class="skabelon-billede billede-contain">
+        <img src="mail.png" alt="Mail-signatur">
+    </div>
+    <div class="skabelon-tekst">
+        <h3>Mail-signatur</h3>
+        <p>Her er skabelonen for hvordan din mail-signatur for din arbejdsmail skal se ud, bare med dine oplysninger.</p>
+        <p>Du kan se hvordan du sætter det op til automatisk at indsættes til alle dine e-mails på Outlook her.</p>
+    </div>
+
+    <!-- RÆKKE 4: Tekst venstre, billede højre -->
+    <div class="skabelon-tekst">
+        <h3>Nyhedsbrev skabelon</h3>
+        <p>Her er skabelonen for dit kommende nyhedsbrev, i TEC stil.</p>
+        <p>Du kan se hvordan du sætter det op og bruger den korrekt i forhold til TECs visuelle identitet her.</p>
+    </div>
+    <div class="skabelon-billede">
+        <img src="nyhedsbrev.png" alt="Nyhedsbrev skabelon">
+    </div>
+
+</section>
+
+<!-- NEDERST BANNER (fuld bredde grafik) -->
+<div class="top-banner">
+    <img src="component.png" alt="Header grafik">
+</div>
+</body>
+</html>

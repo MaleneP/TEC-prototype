@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>TECs DesignPortal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js" defer></script> <!-- Min JavaScript. defer gør at den venter med at køre scriptet til hele html'en er læst.-->
+</head>
+<!-- Header med grafik, logo, menu og ''breaking news'' bar -->
+
+        <!-- ØVERSTE BANNER (fuld bredde grafik) -->
+        <div class="top-banner">
+            <img src="component.png" alt="Header grafik">
+        </div>
+
+        <!-- NEDERSTE NAVBAR (sort bar) -->
+        <div class="navbar">
+            <div class="logo">
+                <a href="landingpage.html">
+                    <img src="compenttec.png" alt="tec logo">
+                </a>
+            </div>
+
+            <!-- DROPDOWN MENU (sort bar) -->
+            <nav> <!-- bruges til at definere en sektion på en webside, der indeholder navigationslinks, i dette tilfælde min dropdown menu. -->
+                <ul> <!-- (Unordered List) er et HTML-tag, der bruges til at oprette en uordnet liste -->
+                    <li class="dropdown" id="mainDropdown"> <!-- List Item (liste-element) og er et HTML-tag, der bruges til at definere et enkelt punkt i en liste. -->
+                        <a href="#" id="dropdownToggle">☰ </a> <!-- Et HTML-anker-element, der bruges til at oprette et klikbart link, som ikke navigerer til en ny side, i dette tilfælde min dropdown menu-->
+                        <ul class="dropdown-content"> <!-- Class er en attribut, der tildeler et eller flere klassenavne til listen. Disse klasser bruges i CSS til at style listen (f.eks. ændre punkttegn til billeder, fjerne indrykning eller lave vandrette menuer). -->
+
+                            <!-- GRAFIK ØVERST -->
+                            <div class="dropdown-graphic">
+                                <img src="component.png" alt="">
+                            </div>
+
+                            <!-- LUKKE-KRYDS -->
+                            <button class="dropdown-close" id="dropdownClose">×</button> <!-- Gør at man kan lukke dropdown menuen igen. -->
+
+                            <!-- Liste for undersiderne i dropdown menuen -->
+                            <li><a href="landingpage.html">Forside</a> </li>
+                            <li><a href="skabeloner.html">Skabeloner</a></li>
+                            <li><a href="visuelle.html">Visuelle elementer</a></li>
+                            <li><a href="guides.html">Guides</a></li>
+                            <li><a href="kontakt.html"> Kontakt og Support</a> </li>
+
+                            <!-- Footer til dropdown menuen med eksterne links -->
+                            <div class="menu-footer">
+                                <a href="https://www.figma.com/proto/WOdX4XsCEalcbG7XDRndKT/TEC-Design-Guide?page-id=128%3A1800&node-id=128-1863&p=f&viewport=470%2C277%2C0.03&t=nPK8KiLYBfAENCJe-1&scaling=scale-down&content-scaling=fixed">TECs Designguide</a>
+                                <a href="#">TECs Intranet</a> <!-- Ikke funktionel da jeg ikke har adgang til intranettet. -->
+                            </div>
+                        </ul>
+                    </ul>
+                </li> <!-- Usikker på om den ændre på noget hvis slettes... -->
+            </ul> <!-- Usikker på om den ændre på noget hvis slettes... -->
+        </nav>
+    </div>
+
+<!-- ''Breaking News'' bar i gul med rullende tekst i loop. -->
+        <div class="news-bar"> <!-- selve den gule boks -->
+            <div class="news-text"> <!-- selve teksten -->
+                NYHED: Ny PowerPoint-skabelon er klar – hent den under “Skabeloner”
+                NYHED: Ny PowerPoint-skabelon er klar – hent den under “Skabeloner”
+                NYHED: Ny PowerPoint-skabelon er klar – hent den under “Skabeloner”
+            </div>
+        </div>
+
+
+<body>
+<main class="content"> <!-- sørger for at alt i denne main class har luft omkring sig, se css .Content -->
+
+    <!-- Intro -->
+    <section class="intro">
+        <h1>Find TECs skabeloner og visuelle elementer</h1>
+        <p>Gør det nemt at bruge den visuelle identitet korrekt.</p>
+
+        <h2>“Sådan bruger du siden”</h2>
+        <p class="steps">
+            1. Find din ønskede kategori<br>
+            2. Download (via Dropbox uden login)<br>
+            3. Brug korrekt design
+        </p>
+    </section>
+
+    <!-- Knapper med links undersiderne -->
+    <section class="circles">
+        <a href="skabeloner.html" class="circle skabelon">Skabelon</a>
+        <a href="visuelle.html" class="circle visuelle">Visuelle elementer</a>
+        <a href="guides.html" class="circle guides">Guides</a>
+        <a href="kontakt.html" class="circle kontakt">Kontakt & support</a>
+
+    </section>
+<br>
+    </br>
+</main> <!-- Her slutter indholdet med de 20px margin -->
+    <div class="banner">
+        <img src="component.png" alt="grafik">
+    </div>
+<br>
+
+<main class="content"> <!-- sikre at teksten ikke starter fra kanten men der er margin -->
+<section class="intro">
+    <h1> Genveje </h1>
+</section>
+</main>
+
+<!-- Knapper med links til dropbox -->
+<section class="ovals">
+    <a href="https://www.dropbox.com/scl/fi/pkgx9v76nta34ke4ot17p/TEC-Skabelon_PPT-Pr-sentation.pptx?rlkey=96qtg5okq4tk3h0mxr9j06j5i&st=m0vaq2do&dl=0"
+       class="oval powerpoint">Download Powerpoint</a>
+    <a href="https://www.dropbox.com/scl/fo/vaniokh34km1zcdr4vlmj/AHQfvWFY-_CyGGKW7Bf9DaA?rlkey=867m2u3607vsl8a7qli2s7yj0&st=dlpgjex1&dl=0"
+       class="oval logofil"> Download Logo</a>
+    <a href="https://www.dropbox.com/scl/fo/q73bw3fuwnwwk7n4udhw5/AMwUELiWQWs03O1n6RzCkKw?rlkey=c3nxepxltn868hqhg5x0tihqd&st=hwlz9rio&dl=0"
+       class="oval mail"> Download mail signatur</a>
+    <a href="https://www.dropbox.com/scl/fo/lf1oxxheymolrpw34xzzq/AJ8N3nH5yC4OAWomXgHuyQk?rlkey=e8cj1047vjxkww2jdq874yb2v&st=myyiggb7&dl=0"
+       class="oval grafik"> Download supergrafik</a>
+</section>
+
+<br>
+<br>
+
+<main class="content">
+
+<!-- Video sektion -->
+<section class="intro">
+    <h1>"Sådan bruges denne side" guide</h1>
+
+    <video controls class="guide-video">
+        <source src="portal1.mp4" type="video/mp4">
+    </video>
+</section>
+</main>
+
+<br>
+<br>
+
+<main class="content">
+
+    <!-- Kontakt -->
+    <section class="intro">
+        <h1>Kontakt os</h1>
+    </section>
+
+    <div class="kontakt-person">
+        <div class="avatar"></div>
+        <div class="info">
+            <h2>Postkasse</h2>
+            <p class="titel">Events og materialebestilling</p>
+            <br>
+            <a href="mailto:events@tec.dk">events@tec.dk</a>
+            <p class="titel">Skriv til os, hvis du;</p>
+            <p class="titel">• Skal bestille materialer</p>
+            <p class="titel">• Mangler noget i campuspakken</p>
+            <p class="titel">• Har spørgsmål</p>
+            <p class="titel">• Har feedback</p>
+            <p class="titel">Postkassen bemandes af kommunikationsafdelingens <br>
+                studentermedhjælpere, som hjælper med bestillinger og spørgsmål.</p>
+
+        </div>
+    </div>
+
+</main>
+<br>
+
+<!-- NEDERST BANNER (fuld bredde grafik) -->
+<div class="top-banner">
+    <img src="component.png" alt="Header grafik">
+</div>
+
+</body>
+</html>

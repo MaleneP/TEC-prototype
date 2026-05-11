@@ -1,0 +1,681 @@
+
+
+/* ØVERSTE BANNER */
+.top-banner img {
+    width: 100%; /* Gør billedet 100% bredt, så det altid går helt ud til kanten. */
+    height: auto; /* Sørger for at højden følger med automatisk, så billedet ikke bliver strukket. */
+    display: block; /* Fjerner det lille hvide gab under billeder. */
+} /* .top-banner img er min selector. Den betyder 'find alle <img>-tags der ligger INDE i et element med class='top-banner''.
+Jeg bruger den både til banneret i toppen og banneret i bunden, så jeg ikke skal skrive koden to gange.*/
+
+/* NAVBAR (sort bar) */
+.navbar { /* den sorte bjælke med logo og dropdown-menu. */
+    background-color: black;
+    display: flex; /* gør at alt indeni bliver lagt på én række, og jeg kan styre det nemt. Uden flex ville logo og menu havne under hinanden.*/
+    justify-content: space-between; /* Skubber logoet helt til venstre og dropdown-ikonet helt til højre. Det skaber automatisk luft imellem.  */
+    align-items: center;
+    padding: 2px 10px;
+}
+
+/* LOGO */
+.logo img {
+    height: 80px;
+}
+
+/* MENU */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* DROPDOWN */
+.dropdown-content { /* Den gør at min dropdown menu fylder hele skærmen når den åbnes, og at man ikke kan fortsætte med at scrolle */
+    display: none; /* = "vær usynlig!" */
+    position: fixed;
+    background: black;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; i én linje */
+    width: 100vw;
+    height: 100vh; /* fylder hele skærmen, altid */
+    z-index: 9999;
+    overflow-y: auto; /* fylder hele skærmen, altid */
+}
+
+/* Gør selve ''☰'' ikonet større */
+.dropdown > a {
+    font-size: 80px;
+    display: block;
+    padding: 10px;
+}
+
+/* Sørger for at dropdown-teksten (Skabeloner osv.) ikke også bliver kæmpe */
+.dropdown-content a {
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    font-family: "TEC Sans";
+    padding: 10px 20px;
+    display: block;
+}
+
+.dropdown.active .dropdown-content {
+    display: block; /* = "vær synlig!" */
+}
+/* Grafik i toppen */
+.dropdown-graphic {
+    width: 100%;
+}
+.dropdown-graphic img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Kryds i højre hjørne */
+.dropdown-close {
+    position: absolute;
+    top: 240px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 70px;
+    font-weight: 200;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.menu-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid white;
+    padding: 10px 10px 0 10px; /* luft over stregen */
+    display: flex;
+    justify-content: space-between; /* en til venstre, en til højre */
+    align-items: center;
+}
+
+.menu-footer a {
+    color: white;
+    font-size: 24px;
+    font-weight: 200;
+    text-transform: none;
+    text-decoration: none;
+    font-family: "TEC Sans";
+}
+
+.news-bar {
+    width: 100%;
+    background-color: #f5e84c;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.news-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Generelt */
+body {
+    margin: 0;
+    font-family: "TEC Sans", sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Content wrapper */
+.content {
+    padding: 20px 20px; /* giver 20 pixels luft INDENI kassen – 20px i top/bund og 20px i venstre/højre */
+}
+
+/*Skabelon siden*/
+/* SKABELONER - GRAFIK MED KNAPPER OVENPÅ */
+.skabelon-hero {
+    position: relative;
+    width: 100vw;
+    margin: 30px 0 60px 0;
+}
+
+.skabelon-hero .banner {
+    width: 100%;
+    margin: 0;
+}
+
+.skabelon-hero .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ovals-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* gør at kun knapperne kan klikkes */
+}
+
+.ovals-overlay .oval {
+    position: absolute;
+    pointer-events: auto;
+    width: 290px;
+    height: 54px;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PLACERING PRÆCIS SOM PÅ DIT BILLEDE */
+.ovals-overlay .powerpoint { /*Powerpoint skabelon + logo-fil pakke visuelle elementer */
+    top: 22%;
+    left: 1%;
+}
+
+.ovals-overlay .mail { /* Mail-signatur Skabelon + font visuelle elementer */
+    top: 22%;
+    left: 50%;
+}
+
+.ovals-overlay .logofil { /* Word Skabelon + Supergrafik visuelle elementer */
+    top: auto;
+    bottom: 18%;
+    left: 25.5%;
+}
+
+.ovals-overlay .grafik { /* Nyhedsbrev Skabelon + Designguide visuelle elementer */
+    top: auto;
+    bottom: 18%;
+    right: 1%;
+}
+
+/* Mobil - stak dem under hinanden */
+@media (max-width: 768px) {
+    .ovals-overlay {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        background: white;
+    }
+    .ovals-overlay .oval {
+        position: static;
+        width: 100%;
+    }
+    .skabelon-hero .banner {
+        display: none; /* skjul grafik på mobil hvis den bliver for lille */
+    }
+}
+ /*Farvepalette - visuelle elementer side */
+.post h1 {
+    font-size: 28px;
+    margin-left: 160px;
+}
+.post h2 {
+    font-size: 16px;
+    font-family: "TEC Sans";
+    font-weight: 400;
+    font-style: italic;
+    margin-left: 160px;
+}
+.post h3 {
+    font-size: 16px;
+    font-family: "TEC Sans";
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 160px;
+}
+
+.intro p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.intro h1 {
+    font-size: 40px;
+}
+.intro h2 {
+    font-size: 25px;
+    margin-top: 20px;
+}
+.intro h3 {
+      font-weight: normal;
+    font-size: 20px;
+}
+
+.steps {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Layout til cirkler */
+.circles {
+    display: flex;
+    justify-content: center; /* fordeler dem på linjen */
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* ❗ gør at de IKKE hopper ned */
+}
+
+/* Base cirkel (struktur) */
+.circle {
+        font-size: 20px;
+    width: 280px;
+    height: 280px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Skabeloner */
+.skabelon {
+    background-color: #E8D7FF;
+    border: 2px solid #C396FF;
+    color: black;
+    font-size: 20px;
+}
+
+/* Visuelle elementer */
+.visuelle {
+    background-color: #C396FF;
+    border: 2px solid #E8D7FF;
+    color: black;
+    font-size: 20px;
+}
+
+/* Guides */
+.guides {
+    background-color: #E6F0E1;
+    border: 2px solid #C2D3BA;
+    color: black;
+    font-size: 20px;
+}
+
+/* Kontakt & support */
+.kontakt {
+    background-color: #C2D3BA;
+    border: 2px solid #E6F0E1;
+    color: black;
+    font-size: 20px;
+}
+
+/* Hover effekt */
+.circle:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+    .circles {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .circle {
+        width: 130px;
+        height: 130px;
+        font-size: 100px;
+    }
+}
+/* OVALER */
+.ovals {
+    display: flex;
+    justify-content: flex-start; /* i stedet for left */
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* så de kan wrappe som på billede 2 */
+    padding-left: 40px; /* det her giver luft fra venstre kant */
+}
+
+.oval {
+    font-size: 18px;
+    padding: 14px 32px; /* brug padding i stedet for fast width/height */
+    width: 230px; /* lad teksten bestemme bredden */
+    height: 40px;
+    border-radius: 999px; /* det her laver pill-formen */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+    font-family: "TEC Sans", sans-serif; /* matcher typisk billede 2 bedre */
+}
+
+.powerpoint {
+    background-color: #E8D7FF; /* lys lilla */
+    color: #000;
+}
+.logofil {
+    background-color: #C396FF; /*mørk lilla*/
+    color: #000;
+}
+.mail {
+    background-color: #E6F0E1; /* lys grøn */
+    color: #000;
+}
+.grafik {
+    background-color: #C2D3BA; /* mørk grøn */
+    color: #000;
+}
+
+.oval:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+
+/* MIDTER BANNER */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Forhindrer uønsket vandret scroll */
+}
+
+.banner {
+    width: 100vw; /* Sætter containerens bredde til 100% af skærmbredden */
+    margin: 0;
+}
+
+.banner img {
+    width: 100%;
+    height: auto; /* 'auto' bevarer billedets proportioner */
+    display: block;
+}
+
+ .intro video, .intro iframe {
+     display: block;
+     margin: 20px auto;
+ }
+ .guide-video {
+     display: block; /* Gør den til block så margin virker */
+     margin: 20px auto; /* 20px top/bund, auto venstre/højre = centreret */
+     width: 100%; /* Fylder containeren ud */
+ }
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 format */
+    height: 0;
+    max-width: 800px;
+    margin: 20px auto; /* Det her centrerer den */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+ /*GRID LAYOUT*/
+.skabelon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 lige store kolonner */
+    gap: 20px; /* luft mellem boksene */
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+/* BILLEDE BOKS */
+.skabelon-billede{
+    background: #fff;
+    border: 1px solid #000;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    overflow: hidden;
+}
+.skabelon-billede img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fylder boksen uden at strække */
+    display: block;
+}
+.skabelon-billede.billede-contain img {
+    object-fit: contain; /* viser hele billedet */
+    background: #fff;
+    padding: 15px;
+}
+
+/* TEKST BOKS */
+.skabelon-tekst {
+    background-color: #E6F0E1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 220px;
+    font-family: "TEC Sans", sans-serif;
+}
+
+.skabelon-tekst h3 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: black;
+}
+.skabelon-tekst p {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: black;
+}
+
+/*FARVEPALETTE*/
+.farve-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 30px 0 60px 160px;
+}
+.farve-boks {
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #000;
+    transition: transform 0.2s;
+}
+.farve-boks:hover {
+    transform: scale(1.05);
+}
+.farve-label{
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font-family: "TEC Sans", sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #000;
+}
+.farve-label strong {
+    margin-right: 15px;
+    font-weight: 700;
+}
+
+/* Kontakt side */
+/* KONTAKT PERSONER */
+.kontakt-wrapper {
+    padding: 40px 20px;
+}
+
+.kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* to ved siden af hinanden */
+    gap: 70px 100px;
+    max-width: 1300px;
+}
+
+.kontakt-person {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    /* hvis du har et rigt billede, brug: */
+    /* background-image: url('maria.jpg'); background-size: cover; */
+}
+
+.kontakt-person .info h2 {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+    color: #000;
+}
+
+.kontakt-person .titel {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    margin: 0 0 8px 0;
+    color: #000;
+}
+
+.kontakt-person .info a {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 16px;
+    color: #000;
+    text-decoration: underline;
+}
+
+.kontakt-person .intro-tekst {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    margin: 22px 0 8px 0;
+    line-height: 1.5;
+}
+
+.kontakt-person ul {
+    margin: 0 0 10px 18px;
+    padding: 0;
+    font-family: "TEC Sans", sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* grøn boks i kontakt og support */
+/* SUPPORT BOKS - kontakt side */
+.support-boks {
+    background-color: #E6F0E1; /* samme lysegrøn som du bruger andre steder */
+    width: 100vw;              /* fylder hele skærmbredden */
+    margin-left: calc(-50vw + 50%); /* trick: bryder ud af .content */
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.support-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.support-boks h2 {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    color: #000;
+}
+
+.support-intro {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0 0 10px 10px;
+}
+
+.support-boks ul {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 0 0 20px 10px; /* indryk som på dit billede */
+    padding: 0;
+    list-style: disc;
+}
+
+.support-boks li {
+    margin-bottom: 2px;
+}
+
+.support-note {
+    font-family: "TEC Sans", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 10px 0 0 10px;
+    max-width: 650px;
+}
+
+/* 1. Regular */
+@font-face {
+    font-family: 'TEC Sans';
+    src: url('../fonts/TECSans-Regular.otf') format('opentype');
+    font-weight: 400;  /* 400 = normal/regular */
+    font-style: normal;
+}
+
+/* 2. Italic */
+@font-face {
+    font-family: 'TEC Sans';
+    src: url('../fonts/TECSans-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* 3. Bold */
+@font-face {
+    font-family: 'TEC Sans';
+    src: url('../fonts/TECSans-Bold.otf') format('opentype');
+    font-weight: 700;  /* 700 = bold */
+    font-style: normal;
+}
+
+/* 4. Bold Italic */
+@font-face {
+    font-family: 'TEC Sans';
+    src: url('TEC/fonts/TECSans-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
